@@ -4,13 +4,13 @@ import "./App.css";
 import POD from "./components/POD";
 
 const App = () => {
-  const [, setPictureOfTheDay] = useState("");
+  const [pictureOfTheDay, setPictureOfTheDay] = useState({});
 
   useEffect(() => {
-    fetch("https://lambda-github-api-server.herokuapp.com/")
+    fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
       .then(res => res.json())
       .then(data => {
-        let imageURL = data.url;
+        let imageURL = data;
         setPictureOfTheDay(imageURL);
         console.log(data);
       })
@@ -19,11 +19,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <POD />
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun !
-      </p>
+      <POD data={pictureOfTheDay} />
     </div>
   );
 };
