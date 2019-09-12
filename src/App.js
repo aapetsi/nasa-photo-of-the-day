@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import styled from "styled-components";
 
 import POD from "./components/POD";
 
+const WrapperDiv = styled.div`
+  margin: 10px auto;
+  width: 80%;
+  font-family: "Chilanka", cursive;
+  border: 2px solid purple;
+  border-radius: 30px;
+`;
+
 const App = () => {
   const [pictureOfTheDay, setPictureOfTheDay] = useState({});
-
+  // https://lambda-github-api-server.herokuapp.com/
   useEffect(() => {
-    fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+    fetch("https://lambda-github-api-server.herokuapp.com/")
       .then(res => res.json())
       .then(data => {
         let imageURL = data;
@@ -18,9 +26,9 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <WrapperDiv>
       <POD data={pictureOfTheDay} />
-    </div>
+    </WrapperDiv>
   );
 };
 
