@@ -23,7 +23,6 @@ const App = () => {
       .then(data => {
         let imageURL = data;
         setPictureOfTheDay(imageURL);
-        console.log(data);
       })
       .catch(err => console.log(err));
   }, []);
@@ -40,7 +39,6 @@ const App = () => {
         let imageURL = data;
         setPictureOfTheDay(imageURL);
       });
-    console.log(e.target.date.value);
   };
 
   return (

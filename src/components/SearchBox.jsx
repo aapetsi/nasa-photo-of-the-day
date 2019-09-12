@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-let defaultDate = new Date();
-
 const WrapperDiv = styled.div`
   margin: 0 auto;
   font-size: 24px;

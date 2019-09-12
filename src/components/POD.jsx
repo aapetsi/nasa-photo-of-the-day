@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { Typography } from "@material-ui/core";
 
 const PODContainer = styled.div`
   margin: 0 auto;
@@ -36,10 +37,9 @@ const Header = styled(TextWrapper)`
 `;
 
 const POD = ({ data }) => {
-  console.log(data);
   return (
     <PODContainer>
-      <Header>Picture of the Day</Header>
+      <Typography variant="h6">Picture of the Day</Typography>
       <ImgContainer src={data.url} alt={data.title} />
       <TextWrapper>Title: {data.title}</TextWrapper>
       <TextWrapper>Date {data.date}</TextWrapper>
