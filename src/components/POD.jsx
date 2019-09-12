@@ -39,7 +39,7 @@ const Header = styled(TextWrapper)`
 const POD = ({ data }) => {
   return (
     <PODContainer>
-      <Typography variant="h6">Picture of the Day</Typography>
+      <Typography variant="h5">Picture of the Day</Typography>
       <ImgContainer src={data.url} alt={data.title} />
       <TextWrapper>Title: {data.title}</TextWrapper>
       <TextWrapper>Date {data.date}</TextWrapper>
