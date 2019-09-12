@@ -43,8 +43,10 @@ const POD = ({ data }) => {
       <ImgContainer src={data.url} alt={data.title} />
       <TextWrapper>Title: {data.title}</TextWrapper>
       <TextWrapper>Date {data.date}</TextWrapper>
-      <TextWrapper>Description:</TextWrapper>
-      <TextWrapper>{data.explanation}</TextWrapper>
+      <TextWrapper></TextWrapper>
+      <TextWrapper>
+        <strong>Description</strong>: {data.explanation}
+      </TextWrapper>
     </PODContainer>
   );
 };
